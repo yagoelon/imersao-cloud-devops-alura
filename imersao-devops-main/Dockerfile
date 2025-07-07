@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copia o restante do código da aplicação para o diretório de trabalho
+##
 COPY . .
 
 # Expõe a porta 8000, que é a porta padrão do Uvicorn
