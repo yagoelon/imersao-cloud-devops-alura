@@ -1,0 +1,16 @@
+# A seção 'services' é onde definimos os contêineres que compõem nossa aplicação.
+services:
+  # 'api' é o nome que damos ao nosso serviço/contêiner.
+  app:
+    # 'build: .' instrui o Docker Compose a construir uma imagem a partir do Dockerfile, localizado no diretório atual (onde o docker-compose.yml está).
+    build: .
+    # Nome do Container
+    container_name: imersao-devops-api
+    # 'ports' mapeia uma porta do seu computador (host) para uma porta dentro do contêiner.
+    # - "8000:8000" significa: a porta 8000 do seu PC será redirecionada para a porta 8000 do contêiner. Isso permite que você acesse a API em http://localhost:8000.
+    ports:
+      - "8000:8000"
+    # 'volumes' sincroniza arquivos/pastas entre o host e o contêiner.
+    # - '.:/app' monta o diretório atual ('.') do seu projeto no diretório '/app' dentro do contêiner.Isso é essencial para o desenvolvimento, pois qualquer alteração no seu código local será refletida instantaneamente no contêiner, permitindo o "hot-reloading". Também garante que o banco de dados 'escola.db' seja salvo no seu diretório local.
+    volumes:
+      - .:/app
