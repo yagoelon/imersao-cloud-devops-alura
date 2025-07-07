@@ -12,5 +12,6 @@ services:
       - "8000:8000"
     # 'volumes' sincroniza arquivos/pastas entre o host e o contêiner.
     # - '.:/app' monta o diretório atual ('.') do seu projeto no diretório '/app' dentro do contêiner.Isso é essencial para o desenvolvimento, pois qualquer alteração no seu código local será refletida instantaneamente no contêiner, permitindo o "hot-reloading". Também garante que o banco de dados 'escola.db' seja salvo no seu diretório local.
+    #teste
     volumes:
       - .:/app
